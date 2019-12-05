@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no,uc-fitscreen=yes">
+    <title>jzbook</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+    <!--类别-->
+    <div style="height: 14rem;overflow: scroll;margin-top: 0rem;" class="weui-cells weui-cells_radio">
+        <!--<a href="javascript:void(0);" class="weui-cell weui-cell_link">
+            <div class="weui-cell__bd">添加更多</div>
+        </a>-->
+    </div>
+
+    <!--<div class="weui-cells__title">消费额</div>-->
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <input id="money" class="weui-input" type="number" placeholder="请输入金额">
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="weui-cells__title">备注</div>-->
+    <div class="weui-cells weui-cells_form">
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <textarea id="remark" class="weui-textarea" placeholder="请输入备注" rows="3"></textarea>
+                <div class="weui-textarea-counter"><span>0</span>/200</div>
+            </div>
+        </div>
+    </div>
+
+    <table style="width: 100%;padding: 1rem 2rem;">
+        <tr>
+            <td>
+                <a href="index.html" class="weui-btn weui-btn_plain-default">取消</a>
+            </td>
+            <td>
+                <a href="javascript:;" onclick="add();" class="weui-btn weui-btn_plain-primary">提交</a>
+            </td>
+        </tr>
+    </table>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+<script type="text/javascript" src="js/add.js"></script>
+<!-- 如果使用了某些拓展插件还需要额外的JS -->
+<script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/swiper.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/city-picker.min.js"></script>
+</html>

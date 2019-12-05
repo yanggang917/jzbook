@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.book.jzbook.dao.BillsDOMapper">
+    <!-- 用用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.book.jzbook.bean.entity.BillsDO" >
+        <id column="id" property="id"/>
+        <result column="money" property="money"/>
+        <result column="dict_id" property="dictId"/>
+        <result column="add_time" property="addTime"/>
+        <result column="remark" property="remark"/>
+        <result column="del_flag" property="delFlag"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, money, dict_id, add_time, remark, del_flag
+    </sql>
+
+    <resultMap id="AllInfoResultMap" extends="BaseResultMap" type="com.book.jzbook.bean.vo.BillsVO">
+        <result column="name" property="dictName"/>
+        <result column="icon" property="icon"/>
+    </resultMap>
+    <sql id="All_Info_Column_List">
+        a.id,
+        a.money,
+        a.dict_id,
+        a.add_time,
+        a.remark,
+        a.del_flag,
+        b.name,
+        b.icon
+    </sql>
+
+    <insert id="insert">
+        insert into bills(
+            money,
+            dict_id,
+            add_time,
+            remark,
+            del_flag
+        )values(
+            #{money},
+            #{dictId},
+            #{addTime},
+            #{remark},
+            0
+        )
+    </insert>
+
+    <select id="selectList" resultMap="AllInfoResultMap">
+        select
+            <include refid="All_Info_Column_List"></include>
+        from bills a
+        left join dict b on a.dict_id = b.id
+        where a.del_flag = 0
+        order by a.id desc
+    </select>
+
+
+</mapper>
