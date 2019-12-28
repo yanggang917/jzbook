@@ -7,11 +7,9 @@ import com.book.jzbook.service.BillsService;
 import com.book.jzbook.utils.MapSortUtils;
 import com.book.jzbook.utils.ResJson;
 import com.google.common.collect.Maps;
+import io.swagger.annotations.Api;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
@@ -25,6 +23,7 @@ import java.util.stream.Collectors;
  * @Date: 2019/11/22 14:44
  * @Description:
  */
+@Api(description = "业务接口")
 @Controller
 @RequestMapping(value = "/bills")
 public class BillsController {
@@ -32,14 +31,14 @@ public class BillsController {
     @Resource
     BillsService billsService;
 
-    @RequestMapping(value = "/save")
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
     @ResponseBody
     public ResJson save(@RequestBody BillsDO billsDO) {
         this.billsService.save(billsDO);
         return ResJson.success();
     }
 
-    @RequestMapping(value = "/delete")
+    @RequestMapping(value = "/delete", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
     public ResJson delete(@RequestParam int billsId) {
         this.billsService.delete(billsId);
@@ -47,7 +46,7 @@ public class BillsController {
     }
 
 
-    @RequestMapping(value = "/selectList")
+    @RequestMapping(value = "/selectList", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
     public ResJson query() {
         List<BillsVO> ss = this.billsService.selectList();
@@ -78,7 +77,7 @@ public class BillsController {
     }
 
 
-    @RequestMapping(value = "/summary")
+    @RequestMapping(value = "/summary", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
     public ResJson summary() {
         List<BillsSummaryVO> billsSummaryVOList = this.billsService.summary();

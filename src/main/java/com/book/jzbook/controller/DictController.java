@@ -3,6 +3,7 @@ package com.book.jzbook.controller;
 import com.book.jzbook.bean.entity.DictDO;
 import com.book.jzbook.service.DictService;
 import com.book.jzbook.utils.ResJson;
+import io.swagger.annotations.Api;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +17,7 @@ import java.util.List;
  * @Date: 2019/11/26 09:13
  * @Description:
  */
+@Api(description = "消费类型字典接口")
 @Controller
 @RequestMapping(value = "/dict")
 public class DictController {
