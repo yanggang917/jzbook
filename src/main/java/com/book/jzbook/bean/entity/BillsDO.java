@@ -13,7 +13,6 @@ import java.util.Date;
  * @Date: 2019/11/22 15:49
  * @Description:
  */
-@Data
 public class BillsDO {
     private int id;
     private BigDecimal money;
@@ -24,4 +23,52 @@ public class BillsDO {
     private Date addTime;
     private String remark;
     private int delFlag;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public BigDecimal getMoney() {
+        return money;
+    }
+
+    public void setMoney(BigDecimal money) {
+        this.money = money;
+    }
+
+    public int getDictId() {
+        return dictId;
+    }
+
+    public void setDictId(int dictId) {
+        this.dictId = dictId;
+    }
+
+    public Date getAddTime() {
+        return addTime;
+    }
+
+    public void setAddTime(Date addTime) {
+        this.addTime = addTime;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public int getDelFlag() {
+        return delFlag;
+    }
+
+    public void setDelFlag(int delFlag) {
+        this.delFlag = delFlag;
+    }
 }

@@ -8,10 +8,33 @@ import lombok.Data;
  * @Date: 2019/11/23 14:45
  * @Description:
  */
-@Data
 public class BillsVO extends BillsDO {
 
     private String dictName;
     private String addTimeStr;
     private String icon;
+
+    public String getDictName() {
+        return dictName;
+    }
+
+    public void setDictName(String dictName) {
+        this.dictName = dictName;
+    }
+
+    public String getAddTimeStr() {
+        return addTimeStr;
+    }
+
+    public void setAddTimeStr(String addTimeStr) {
+        this.addTimeStr = addTimeStr;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
 }
